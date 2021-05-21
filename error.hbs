@@ -1,0 +1,34 @@
+{{!< default}}
+
+<div class="content-area">
+    <main class="site-main">
+        <div class="cover-content container">
+            <div class="cover-description">
+                <p><b>{{statusCode}}</b> {{message}}</p>
+            </div>
+            <p>
+                Go to the
+                <a class="menu-item-cta" href="{{@site.url}}">
+                    front page
+                </a>
+            </p>
+            <img
+                src="https://imgs.xkcd.com/comics/networking_problems.png"
+                alt="networking problems"
+                loading="lazy"
+            />
+        </div>
+
+        {{#get "posts" limit="5"}}
+            <section class="related-wrapper">
+                <div class="container small">
+                    <div class="post-feed related-feed">
+                        {{#foreach posts}}
+                            {{> "loop"}}
+                        {{/foreach}}
+                    </div>
+                </div>
+            </section>
+        {{/get}}
+
+{{#contentFor "body_class"}}{{#if next}} paged-next{{/if}}{{#if @site.logo}}{{#if @site.cover_image}} with-alt-header{{/if}}{{/if}}{{/contentFor}}
