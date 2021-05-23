@@ -125,22 +125,21 @@
 
 .single-toc .toc-list {
     list-style-type: none;
+    padding-left: 12px;
 }
 
-.toc-list .toc-list {
-    padding: 4px 0 0 4px;
+.single-toc > .toc-list {
+    border-left: 3px solid var(--brand-color);
+    margin-left: 20px;
 }
 
-li.toc-list-item {
+.toc-list li.toc-list-item {
     overflow: hidden;
-    padding: 0 8px;
-    border-left: 3px solid var(--light-gray-color);
     text-overflow: ellipsis;
     white-space: pre;
 }
 
-li.toc-list-item.is-active-li {
-    border-color: var(--ghost-accent-color);
+li.toc-list-item.is-active-li > a {
     font-weight: 600;
 }
 
