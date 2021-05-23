@@ -37,8 +37,16 @@
         {{/if}}
     </header>
 
-    <div class="single-content kg-canvas u-text-format">
-        {{content}}
+    <div class="single-content-wrapper">
+        {{#is "post"}}
+            <aside class="single-toc-container">
+                <div class="single-toc"></div>
+            </aside>
+        {{/is}}
+
+        <div class="single-content kg-canvas u-text-format">
+            {{content}}
+        </div>
     </div>
 
     {{#is "post"}}

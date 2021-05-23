@@ -9,6 +9,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,400;0,700;0,800;1,400;1,700&display=swap">
 
+    {{#is "post"}}
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.11.0/tocbot.min.css" integrity="sha512-SFw7k74K3983tyOlJIHa8atr9Ppef3Kix5cmifwzU7ZdtU2E0FRuOVRtd3ENpMJ8sNCie5hlb/0j23efcdQJXA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    {{/is}}
+
     {{ghost_head}}
 </head>
 
@@ -55,6 +59,20 @@
     </script>
 
     <script src="{{asset "built/main.min.js"}}"></script>
+
+    {{#is "post"}}
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tocbot/4.12.2/tocbot.min.js" integrity="sha512-8u1QblAcGUuhEv26YgTYO3+OtPL7l37qiYoPQtahVTaiLn/H3Z/K16TOXJ3U7PDYBiJWCWKM0a+ELUDGDgED2Q==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script>
+        tocbot.init({
+                    tocSelector: '.single-toc',
+                    contentSelector: '.single-content',
+                    hasInnerContainers: true,
+                    ignoreSelector: '.single-cta-title',
+                    activeListItemClass: 'is-active-li',
+                    orderedList: false
+                });
+    </script>
+    {{/is}}
 
     {{ghost_foot}}
 </body>
